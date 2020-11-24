@@ -1,12 +1,28 @@
 pipeline {
-    agent {
-        docker { image 'node:14-alpine' }
+  agent any
+    
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Git') {
+      steps {
+        git 'https://github.com/JyotiSahoo2904/REACTJS.git'
+      }
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
+     
+    stage('Build') {
+      steps {
+        sh 'npm install'
+        sh 'npm build'
+      }
+    }  
+    
+            
+    stage('Test') {
+      steps {
+        sh 'node test'
+      }
     }
+  }
 }
