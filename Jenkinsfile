@@ -5,9 +5,9 @@ pipeline {
     
   stages {
         
-    stage('Git') {
+    stage('Git Checkout') {
       steps {
-        git 'https://github.com/JyotiSahoo2904/REACTJS.git'
+        git branch: 'main', credentialsId: 'fa250d60-05c1-49a0-8758-1c8095a831c5', url: 'https://github.com/JyotiSahoo2904/REACTJS.git'
       }
     }
      
