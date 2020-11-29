@@ -13,8 +13,8 @@ pipeline {
      
     stage('Build') {
       steps {
-        npm install
-        npm build
+        bat 'npm install'
+        bat 'npm build'
       }
     }  
     
