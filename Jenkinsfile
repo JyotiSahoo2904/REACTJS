@@ -13,6 +13,9 @@ pipeline {
      
     stage('Build') {
       steps {
+	    cd \
+		D:		
+	    cd 'D:\GITRepository\REACTJS\CITYWHEATHER'
         bat 'npm install'
         bat 'npm build'
       }
@@ -21,7 +24,8 @@ pipeline {
             
     stage('Test') {
       steps {
-        bat 'node test'
+	  echo 'Test'
+        //bat 'node test'
       }
     }
   }
